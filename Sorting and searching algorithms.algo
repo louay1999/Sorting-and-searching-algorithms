@@ -1,0 +1,16 @@
+PROCEDURE p_selection_sort(n : INTEGER, tab : ARRAY_OF INTEGER)
+VAR
+    i,j,min,temp : INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-2 STEP step  DO
+        min := i;
+        FOR j FROM i TO n-i-2 STEP step  DO
+            IF (tab[j]<tab[min]) THEN
+                min := j;
+            END_IF
+        END_FOR
+        temp := tab[i];
+        tab[i] := tab[min];
+        tab[min]:= temp;
+    END_FOR
+END
